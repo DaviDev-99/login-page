@@ -19,9 +19,10 @@ body{
 }
 
 .login{
-    height: 500px;
-    width: 900px;
-    background-color: rgb(255, 255, 255);
+    width: 90vw;
+    max-width: 900px;
+    min-height: 400px;
+    background-color: #fff;
     display: flex;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
     opacity: 0;
@@ -29,82 +30,65 @@ body{
     transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.login.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.login h1{
-    margin-bottom: 10px;
-}
-
 .left-login, .right-login{
     display: flex;
     flex-direction: column;
-    width: 100%;
+    flex: 1;
     height: 100%;
 }
 
-.left-login{
-    padding: 30px 20px;
-    background-color: rgb(255, 255, 255);
-    gap: 20px;
+.input{
+    position: relative;
 }
 
-.left-login .underline{
-    border-bottom: 3px solid  rgba(123, 44, 191, 1);
-}
-
-.left-login .text-field{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.input i{
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(123, 44, 191, 1);
+    pointer-events: none;
 }
 
 .text-field input{
     height: 40px;
     background-color: transparent;
     border: none;
-    padding-left: 20px;
+    padding-left: 44px;
     font-size: 15px;
     outline: none;
 }
 
-.text-field .input{
-    border-bottom: 2px solid rgb(161, 161, 161);
-}
+@media (max-width: 700px) {
+    .login{
+        flex-direction: column;
+        width: 95vw;
+        min-height: auto;
+    }
 
-.text-field input::placeholder{
-    font-family: "Mulish", sans-serif;
-    color: rgb(107, 107, 107);
-}
+    .right-login{
+        display: none;
+    }
 
-.input i{
-    position: absolute;
-    transform: translateY(50%);
-    color:  rgba(123, 44, 191, 1);
-}
+    .left-login{
+        padding: 20px;
+        gap: 14px;
+    }
 
-.link-area{
-    color: rgba(123, 44, 191, 1);
-    text-decoration: none;
-}
+    .btn2{
+        width: auto;
+        padding: 8px 16px;
+    }
 
-.link-area:hover{
-    text-decoration: underline;
-}
+    .social-media i{
+        font-size: 28px;
+    }
 
-.btn{
-    font-family: "Mulish", sans-serif;
-    font-size: 15px;
-    font-weight: 600;
-    color: white;
-    border: none;
-    background-color: #9D4EDD;
-    margin: 10px 0;
-    cursor: pointer;
-    padding: 10px;
-    transition: transform 0.1s ease-in-out;
+    .text-field input{
+        height: 48px;
+        font-size: 16px;
+    }
+}    transition: transform 0.1s ease-in-out;
 }
 
 .btn:hover{
